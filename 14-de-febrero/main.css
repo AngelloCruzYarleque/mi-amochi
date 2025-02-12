@@ -2,18 +2,32 @@ body {
   margin: 0;
   padding: 0;
   background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la pantalla */
+}
+
+.contenedor {
+  width: 80%; /* Se ajusta al tamaño de la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que la imagen sobresalga */
+  position: relative; /* Para controlar el tamaño interno */
 }
 
 p {
-  font-size: 8px;
-  line-height: 8px;
+  font-size: min(
+    5vw,
+    30px
+  ); /* El texto se adapta automáticamente al tamaño de la pantalla */
   text-align: justify;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background: url(image.jpg) no-repeat center/cover;
-  background-attachment: fixed;
+  background: url("image.jpg") no-repeat center;
+  background-size: cover; /* Asegura que la imagen cubra el texto */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgb(225, 225, 255, 0);
+  -webkit-text-fill-color: transparent;
+  padding: 5px;
+  max-width: 100%; /* Asegura que el texto no se expanda más que la imagen */
+  white-space: wrap; /* Permite que el texto se ajuste dentro del div */
 }
