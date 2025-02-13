@@ -15,6 +15,9 @@ body {
   align-items: center;
   overflow: hidden; /* Evita que la imagen sobresalga */
   position: relative; /* Para controlar el tamaño interno */
+  opacity: 0; /* Oculto al inicio */
+  transform: translateY(50px) scale(0.8); /* Efecto inicial de abajo y pequeño */
+  animation: aparecer 4s ease-out forwards; /* Animación de entrada */
 }
 
 p {
@@ -30,4 +33,18 @@ p {
   padding: 5px;
   max-width: 100%; /* Asegura que el texto no se expanda más que la imagen */
   white-space: wrap; /* Permite que el texto se ajuste dentro del div */
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(20px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
