@@ -1,0 +1,253 @@
+.dancing-script {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ffecf2;
+  background-image: url("/san-valentin/gifts/fondo.jpg");
+  background-size: cover; /* Ajusta la imagen al tamaño del viewport */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#gifContainerImg {
+  width: 60%;
+  height: 60%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+#siBtn {
+  background-color: #ff69b4; /* Rosa fuerte */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+#noBtn {
+  background-color: #ff4444; /* Rojo vibrante */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+#siBtn:hover {
+  background-color: #ff1493; /* Rosa más intenso */
+  transform: scale(1.1);
+}
+
+#noBtn:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+#noBtn span {
+  font-size: 18px;
+  color: #fcf4f4; /* Cambia el color del texto según tus preferencias */
+  /* Otras propiedades de estilo aquí */
+}
+.bg-green {
+  background-color: #ffffff; /* Nuevo color de fondo verde */
+}
+
+#messageContainer {
+  font-size: 30px;
+  color: black; /* Color rojo */
+  font-family: "YourDesiredFont", sans-serif; /* Reemplaza 'YourDesiredFont' con la fuente que desees */
+  text-shadow: 2px 2px 4px #000; /* Borde simulado */
+  animation: pulse 0.5s infinite alternate; /* Animación de palpitación más rápida */
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3); /* Zoom más grande */
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.question {
+  font-size: clamp(16px, 5vw, 50px);
+
+  color: #d63384;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: heartbeat 1s infinite alternate;
+}
+#gifContainer img,
+#happyGifContainer img,
+#sadGifContainer img {
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+}
+#loveMessage {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+  animation: heartbeat 1s infinite alternate;
+}
+
+/* Animación de latido */
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+.para {
+  font-size: 40px; /* Tamaño grande para destacar */
+  font-weight: bold; /* Negrita para resaltar */
+  font-family: "Dancing Script", cursive; /* Tipografía romántica */
+  color: black; /* Un rosa fuerte para destacar */
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 20px; /* Espacio antes del container */
+  text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3); /* Sombra sutil para dar profundidad */
+  animation: heartbeat 1.2s infinite alternate; /* Animación de latido */
+}
+
+/* Animación de latido para que se vea más romántico */
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  #happyGifContainer img,
+  #happyGifContainer2 img,
+  #happyGifContainer3 img,
+  #happyGifContainer4 img {
+    width: 80%; /* Más grande en móviles */
+    max-width: 250px; /* Límite en móviles */
+  }
+}
+
+@media (min-width: 1024px) {
+  #happyGifContainer img,
+  #happyGifContainer2 img,
+  #happyGifContainer3 img,
+  #happyGifContainer4 img {
+    width: 50%; /* Un poco más pequeño en pantallas grandes */
+    max-width: 400px;
+  }
+}
+#happyGifContainer img,
+#happyGifContainer2 img,
+#happyGifContainer3 img,
+#happyGifContainer4 img {
+  width: 60%; /* Ajusta este porcentaje según prefieras */
+  max-width: 300px; /* No crecerán más allá de este tamaño */
+  height: auto; /* Mantiene la proporción */
+  display: block;
+  margin: 0 auto; /* Centra los GIFs */
+}
+/* Fondo del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: #ffe4e1; /* Fondo romántico */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5d;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
