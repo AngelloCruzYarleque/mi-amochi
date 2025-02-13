@@ -28,7 +28,7 @@ p {
   text-align: justify;
   background: url("image.jpg") no-repeat center;
   background-size: cover; /* Asegura que la imagen cubra el texto */
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 5px;
   max-width: 100%; /* Asegura que el texto no se expanda más que la imagen */
