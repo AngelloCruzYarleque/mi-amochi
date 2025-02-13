@@ -19,7 +19,7 @@ body {
 
 p {
   font-size: min(
-    5vw,
+    0.5vw,
     30px
   ); /* El texto se adapta automáticamente al tamaño de la pantalla */
   text-align: justify;
