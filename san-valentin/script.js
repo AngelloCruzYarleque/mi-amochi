@@ -118,7 +118,8 @@ document.getElementById("siBtn").addEventListener("click", function () {
 
 document.getElementById("sendWhatsApp").addEventListener("click", function () {
   let numeroWhatsApp = "51994771383"; // Reemplaza con el número de WhatsApp (sin + ni espacios)
-  let mensaje = "¡Hola mi amor! Si quiero ser tu SAN VALENTIN. Te amo mucho";
+  let mensaje =
+    "Amochiiii. Si quiero ser tu SAN VALENTIN hoy y SIEMPRE. Te amo muchooooo";
   let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
     mensaje
   )}`;
