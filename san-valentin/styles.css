@@ -12,7 +12,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #ffecf2;
-  background-image: url("/san-valentin/gifts/fondo.jpg");
+  background-image: url("https://angellocruzyarleque.github.io/mi-amochi/san-valentin/gifts/fondo.jpg");
   background-size: cover; /* Ajusta la imagen al tamaño del viewport */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
