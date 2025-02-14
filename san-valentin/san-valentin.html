@@ -98,17 +98,21 @@
         <button id="sendWhatsApp" class="whatsapp-button">Sí, enviar 💕</button>
       </div>
     </div>
-    <audio id="musica" loop>
-      <source src="audio.mp3" type="audio/mpeg" />
-    </audio>
 
     <script src="script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        let audio = document.getElementById("musica");
-        audio.play().catch((error) => {
-          console.log("El navegador bloqueó la reproducción automática.");
-        });
+        const audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        const audioElement = new Audio("audio.mp3");
+        const track = audioContext.createMediaElementSource(audioElement);
+        track.connect(audioContext.destination);
+
+        // Activa el audio automáticamente
+        audioElement.loop = true;
+        audioElement
+          .play()
+          .catch((error) => console.log("Bloqueo de autoplay"));
       });
     </script>
   </body>
