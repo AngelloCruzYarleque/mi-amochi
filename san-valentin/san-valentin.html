@@ -98,22 +98,31 @@
         <button id="sendWhatsApp" class="whatsapp-button">Sí, enviar 💕</button>
       </div>
     </div>
+    <div id="modal-music">
+      <p>AMOCHI ACEPTA 🎵</p>
+      <button id="playMusic">▶ Reproducir Música</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="musica" loop>
+      <source src="audio.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="script.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const audioContext = new (window.AudioContext ||
-          window.webkitAudioContext)();
-        const audioElement = new Audio("audio.mp3");
-        const track = audioContext.createMediaElementSource(audioElement);
-        track.connect(audioContext.destination);
-
-        // Activa el audio automáticamente
-        audioElement.loop = true;
-        audioElement
-          .play()
-          .catch((error) => console.log("Bloqueo de autoplay"));
-      });
+      document
+        .getElementById("playMusic")
+        .addEventListener("click", function () {
+          let audio = document.getElementById("musica");
+          audio
+            .play()
+            .then(() => {
+              document.getElementById("modal-music").style.display = "none"; // Oculta el aviso
+            })
+            .catch((error) => {
+              console.log("Error al reproducir el audio:", error);
+            });
+        });
     </script>
   </body>
 </html>
