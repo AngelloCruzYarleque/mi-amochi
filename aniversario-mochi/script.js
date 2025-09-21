@@ -350,3 +350,56 @@ $("#currentYear").textContent = new Date().getFullYear();
   // Cambiar la imagen cada 5 segundos
   setInterval(changeImage, 5000); // Cambia la imagen cada 5 segundos
 })();
+
+(function changeWord() {
+  const words = [
+    "MI TODO",
+    "MI sol",
+    "MI universo",
+    "MI razón",
+    "MI estrella",
+    "MI amor",
+    "MI vida",
+    "MI corazón",
+    "MI musa",
+    "MI felicidad",
+    "MI tesoro",
+    "MI alma",
+    "MI sueño",
+    "MI destino",
+    "MI luz",
+    "MI querida",
+    "MI princesa",
+    "MI cielo",
+    "MI maravilla",
+    "MI compañera",
+    "MI inspiración",
+    "MI sonrisa",
+    "MI enigma",
+    "MI pequeña",
+    "MI eterna",
+    "MI corazón latente",
+    "MI emoción",
+    "MI caricia",
+    "MI soledad feliz",
+    "MI hermosura",
+    "MI ángel",
+    "MI cautivadora",
+    "MI reflejo",
+    "MI sueño hecho realidad",
+    "MI magia",
+    "MI estrella brillante",
+    "MI felicidad infinita",
+    "MI adorada",
+    "MI todo amor",
+    "MI cielo estrellado",
+  ];
+
+  let currentIndex = 0;
+  const changingElement = document.getElementById("changingWord");
+
+  setInterval(() => {
+    changingElement.textContent = words[currentIndex]; // Cambia el texto de la palabra
+    currentIndex = (currentIndex + 1) % words.length; // Avanza al siguiente
+  }, 3000); // Cambia cada 3 segundos
+})();

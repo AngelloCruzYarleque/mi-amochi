@@ -280,3 +280,44 @@ img {
   height: auto;
   object-fit: cover;
 }
+/* Estilos para la palabra cambiante */
+.changing-word {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff69b4; /* Puedes cambiar este color */
+  animation: changeWord 4s infinite; /* Efecto de animación */
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Estilos para la palabra cambiante */
+.changing-word {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff69b4; /* Color de la palabra inicial */
+  animation: changeWord 15s infinite; /* Efecto de animación */
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color 1s ease-in-out;
+}
+
+@keyframes changeWord {
+  0% {
+    color: #ff69b4; /* Color de "TODO" */
+  }
+  20% {
+    color: #ffa500; /* Color de "sol" */
+  }
+  40% {
+    color: #ffd700; /* Color de "universo" */
+  }
+  60% {
+    color: #32cd32; /* Color de "vida" */
+  }
+  80% {
+    color: #00bfff; /* Color de "razón" */
+  }
+  100% {
+    color: #ff69b4; /* Color de "TODO" */
+  }
+}
