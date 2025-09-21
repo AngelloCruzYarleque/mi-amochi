@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Un Año de Amor</title>
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!-- Cambia data-start-date a la fecha real (AAAA-MM-DD) -->
+  <body class="text-gray-800" data-start-date="2023-01-01">
+    <!-- Canvas de corazones del fondo -->
+    <canvas id="bgHearts" aria-hidden="true"></canvas>
+    <!-- Contenedor para los corazones del click -->
+    <div id="clickHearts" aria-hidden="true"></div>
+
+    <!-- Barra de progreso de lectura -->
+    <div
+      id="progressBar"
+      class="fixed top-0 left-0 h-1 bg-pink-500 w-0 z-[100]"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="relative text-center py-12 bg-gradient-to-r from-pink-500 to-red-400 text-white overflow-hidden"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_400px_at_80%_-20%,rgba(255,255,255,.15),transparent),radial-gradient(600px_300px_at_10%_-10%,rgba(255,255,255,.12),transparent)]"
+      ></div>
+
+      <h1 class="relative text-4xl md:text-6xl font-bold dancing-font fade-in">
+        Un Año Juntos
+      </h1>
+      <p class="relative text-xl md:text-2xl mt-4 dancing-font">
+        Celebrando nuestro primer año de amor
+      </p>
+      <div class="relative heart-beat inline-block mt-6 text-4xl">❤️</div>
+
+      <!-- Parallax decorativo -->
+      <div class="parallax-hearts" aria-hidden="true">
+        <span>💖</span><span>💘</span><span>💞</span><span>💕</span>
+      </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="py-16 px-4 md:px-8 max-w-6xl mx-auto">
+      <div
+        class="bg-white rounded-3xl shadow-xl p-8 md:p-12 love-letter float reveal"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-pink-600 dancing-font"
+        >
+          Mi Amor
+        </h2>
+        <p class="text-lg md:text-xl mt-6 text-center leading-relaxed">
+          Hoy celebramos 365 días de risas, complicidad y amor infinito. Cada
+          momento a tu lado ha sido un regalo del destino, y mi corazón late con
+          felicidad al recordar cada sonrisa, cada abrazo, cada "te amo".
+        </p>
+        <p class="text-lg md:text-xl mt-4 text-center leading-relaxed">
+          Eres la persona más especial en mi vida, y este primer año es solo el
+          comienzo de nuestra hermosa historia juntos.
+        </p>
+        <div class="text-center mt-8">
+          <span class="inline-block heart-beat text-2xl">💖</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="py-12 px-4 md:px-8 max-w-6xl mx-auto">
+      <h2
+        class="text-3xl font-bold text-center mb-12 text-pink-600 dancing-font reveal"
+      >
+        Nuestros Momentos
+      </h2>
+
+      <!-- Galería de fotos (6 fotos fijas) -->
+      <div
+        class="photo-gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative"
+      >
+        <!-- Foto 1 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <img
+            src="img/foto1.jpeg"
+            alt="Pareja sonriente felizmente en la puesta de sol"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto1.jpeg"
+            <!--
+            Esto
+            sirve
+            para
+            abrir
+            la
+            imagen
+            en
+            el
+            lightbox
+            --
+          />
+          />
+        </div>
+        <!-- Foto 2 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <img
+            src="img/foto2.jpeg"
+            alt="Pareja tomada de la mano caminando en la playa"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto2.jpeg"
+          />
+        </div>
+        <!-- Foto 3 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <img
+            src="img/foto3.jpeg"
+            alt="Pareja abrazándose con corazones de fondo"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto3.jpeg"
+          />
+        </div>
+        <!-- Foto 4 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <img
+            src="img/foto4.jpeg"
+            alt="Celebración con globos y pastel de aniversario"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto4.jpeg"
+          />
+        </div>
+        <!-- Foto 5 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <img
+            src="img/foto5.jpeg"
+            alt="Cena romántica a la luz de las velas"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto5.jpeg"
+          />
+        </div>
+        <!-- Foto 6 (cambiando) -->
+        <div
+          id="changingImage"
+          class="rounded-2xl overflow-hidden shadow-lg reveal"
+        >
+          <img
+            src="img/foto6.jpeg"
+            alt="Pareja mirando las estrellas por la noche"
+            class="w-full h-64 object-cover hover:scale-[1.03] transition-transform duration-300 cursor-zoom-in"
+            data-full="img/foto6.jpeg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox nativo -->
+    <dialog id="lightbox" class="rounded-xl p-0 backdrop:bg-black/70">
+      <button
+        id="lbClose"
+        class="absolute right-3 top-2 text-white/90 text-2xl"
+        aria-label="Cerrar"
+      >
+        ✕
+      </button>
+      <img
+        id="lbImg"
+        alt="Foto ampliada"
+        class="max-h-[85vh] w-auto block rounded-xl"
+      />
+    </dialog>
+
+    <!-- Timeline -->
+    <section class="py-12 px-4 md:px-8 max-w-4xl mx-auto">
+      <h2
+        class="text-3xl font-bold text-center mb-12 text-pink-600 dancing-font reveal"
+      >
+        Nuestra Historia
+      </h2>
+
+      <div class="relative">
+        <div
+          class="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-pink-300"
+        ></div>
+
+        <div
+          class="timeline-item mb-10 flex justify-between items-center w-full"
+        >
+          <div class="order-1 w-5/12"></div>
+          <div class="order-1 w-5/12 px-1 py-4 text-right reveal">
+            <p class="mb-2 text-base text-pink-500">Primera Cita</p>
+            <h4 class="mb-3 font-bold text-lg md:text-xl">
+              El comienzo de todo
+            </h4>
+            <p class="text-sm md:text-base leading-snug text-gray-600">
+              Aquel día que nos conocimos y supe que eras alguien especial.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item mb-10 flex justify-between items-center w-full"
+        >
+          <div class="order-1 w-5/12 px-1 py-4 text-left reveal">
+            <p class="mb-2 text-base text-pink-500">Primer Beso</p>
+            <h4 class="mb-3 font-bold text-lg md:text-xl">
+              Bajo las estrellas
+            </h4>
+            <p class="text-sm md:text-base leading-snug text-gray-600">
+              Un momento mágico que siempre recordaré.
+            </p>
+          </div>
+          <div class="order-1 w-5/12"></div>
+        </div>
+
+        <div
+          class="timeline-item mb-10 flex justify-between items-center w-full"
+        >
+          <div class="order-1 w-5/12"></div>
+          <div class="order-1 w-5/12 px-1 py-4 text-right reveal">
+            <p class="mb-2 text-base text-pink-500">Viaje Juntos</p>
+            <h4 class="mb-3 font-bold text-lg md:text-xl">
+              Aventura inolvidable
+            </h4>
+            <p class="text-sm md:text-base leading-snug text-gray-600">
+              Nuestro primer viaje donde descubrimos lo bien que nos
+              complementamos.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item mb-2 flex justify-between items-center w-full"
+        >
+          <div class="order-1 w-5/12 px-1 py-4 text-left reveal">
+            <p class="mb-2 text-base text-pink-500">Hoy</p>
+            <h4 class="mb-3 font-bold text-lg md:text-xl">Un año juntos</h4>
+            <p class="text-sm md:text-base leading-snug text-gray-600">
+              365 días de felicidad, crecimiento y amor incondicional.
+            </p>
+          </div>
+          <div class="order-1 w-5/12"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contador de tiempo -->
+    <section class="py-12 px-4 bg-pink-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 text-pink-600 dancing-font reveal">
+          Nuestro Tiempo Juntos
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="years">0</div>
+            <div class="text-gray-600">Años</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="months">0</div>
+            <div class="text-gray-600">Meses</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="days">0</div>
+            <div class="text-gray-600">Días</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="hours">0</div>
+            <div class="text-gray-600">Horas</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="minutes">0</div>
+            <div class="text-gray-600">Minutos</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md reveal">
+            <div class="text-4xl font-bold text-pink-600" id="seconds">0</div>
+            <div class="text-gray-600">Segundos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensaje final -->
+    <section class="py-16 px-4 md:px-8 max-w-4xl mx-auto text-center">
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-6 text-pink-600 dancing-font reveal"
+      >
+        Para Mi Amor
+      </h2>
+      <p class="text-lg md:text-xl mb-6">
+        Gracias por este año maravilloso. Eres mi mejor regalo, mi razón para
+        sonreír cada día y mi lugar favorito en el mundo.
+      </p>
+      <p class="text-xl md:text-2xl font-semibold text-pink-600 dancing-font">
+        Te amo hoy, mañana y siempre ❤️
+      </p>
+      <div class="mt-8 flex justify-center">
+        <button
+          id="heartButton"
+          class="sparkle-btn bg-pink-500 hover:bg-pink-600 text-white text-xl py-3 px-8 rounded-full dancing-font transition-all duration-300 transform hover:scale-105"
+        >
+          ❤️ Presiona aquí
+        </button>
+      </div>
+    </section>
+
+    <!-- Modal con flores amarillas -->
+    <dialog id="flowerModal" class="rounded-xl p-0 backdrop:bg-black/50">
+      <button
+        id="modalClose"
+        class="absolute top-2 right-3 text-3xl"
+        style="color: red"
+        aria-label="Cerrar modal"
+      >
+        ✕
+      </button>
+      <div class="modal-content text-center p-8">
+        <h3 class="text-3xl font-bold text-yellow-400 mb-6">
+          ¡Feliz Aniversario, mi amor!
+        </h3>
+        <p class="text-lg mb-4" style="color: black">
+          Hoy celebramos un año de amor, felicidad y momentos juntos. Que este
+          sea solo el comienzo de muchas más aventuras.
+        </p>
+        <div class="flowers-container relative">
+          <!-- Las flores amarillas flotando aparecerán aquí -->
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Contenedor para flores amarillas flotantes -->
+    <div id="floatingFlowers"></div>
+
+    <!-- Footer -->
+    <footer
+      class="py-8 bg-gradient-to-r from-pink-500 to-red-400 text-white text-center"
+    >
+      <p class="dancing-font text-xl">Hecho con ❤️ para ti</p>
+      <p class="mt-2">
+        Nuestro primer aniversario - <span id="currentYear"></span>
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
